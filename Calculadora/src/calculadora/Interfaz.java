@@ -100,6 +100,11 @@ Calculadora resul = new Calculadora();
 
         limpiar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         limpiar.setText("Limpiar Calculadora");
+        limpiar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                limpiarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -212,6 +217,12 @@ Calculadora resul = new Calculadora();
   
         this.resultado.setText(String.valueOf(num1/num2));        // TODO add your handling code here:
     }//GEN-LAST:event_dividirMouseClicked
+
+    private void limpiarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_limpiarMouseClicked
+  this.numero1.setText(null);     
+this.numero2.setText(null);
+this.resultado.setText(null);// TODO add your handling code here:
+    }//GEN-LAST:event_limpiarMouseClicked
 
     /**
      * @param args the command line arguments
