@@ -9,8 +9,8 @@ package calculadora;
  *
  * @author Estudiantes
  */
-public class Calculadora extends Interfaz {
-    double resultado;
+public class Calculadora {
+    double resultado,num1,num2;
     public double sumar(){
         resultado = num1 + num2;
         return resultado;

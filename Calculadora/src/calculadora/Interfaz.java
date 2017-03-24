@@ -10,10 +10,11 @@ package calculadora;
  * @author Estudiantes
  */
 public class Interfaz extends javax.swing.JFrame {
-double num1, num2;
+double num1, num2; 
+Calculadora resul = new Calculadora();
     public Interfaz() {
-      num1 = Double.valueOf(this.numero1.getText());
-      num2 = Double.valueOf(this.numero2.getText());
+    
+   
         initComponents();
     }
 
@@ -54,6 +55,11 @@ double num1, num2;
 
         sumar.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         sumar.setText("+");
+        sumar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sumarMouseClicked(evt);
+            }
+        });
         sumar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sumarActionPerformed(evt);
@@ -62,12 +68,32 @@ double num1, num2;
 
         restar.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         restar.setText("-");
+        restar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                restarMouseClicked(evt);
+            }
+        });
+        restar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                restarActionPerformed(evt);
+            }
+        });
 
         mult.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         mult.setText("*");
+        mult.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                multMouseClicked(evt);
+            }
+        });
 
         dividir.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         dividir.setText("/");
+        dividir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                dividirMouseClicked(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel3.setText("Resultado");
@@ -147,12 +173,45 @@ double num1, num2;
     }// </editor-fold>//GEN-END:initComponents
 
     private void numero2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numero2ActionPerformed
-        // TODO add your handling code here:
+      // TODO add your handling code here:
     }//GEN-LAST:event_numero2ActionPerformed
 
     private void sumarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sumarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_sumarActionPerformed
+
+    private void sumarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sumarMouseClicked
+            num1 = Double.parseDouble(this.numero1.getText());
+      num2 = Double.parseDouble(this.numero2.getText()); 
+      
+  
+        this.resultado.setText(String.valueOf( num1+num2)); // TODO add your handling code here:
+    }//GEN-LAST:event_sumarMouseClicked
+
+    private void restarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restarActionPerformed
+       // TODO add your handling code here:
+    }//GEN-LAST:event_restarActionPerformed
+
+    private void restarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_restarMouseClicked
+             num1 = Double.parseDouble(this.numero1.getText());
+      num2 = Double.parseDouble(this.numero2.getText()); 
+  
+        this.resultado.setText(String.valueOf(num1-num2));  // TODO add your handling code here:
+    }//GEN-LAST:event_restarMouseClicked
+
+    private void multMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_multMouseClicked
+         num1 = Double.parseDouble(this.numero1.getText());
+      num2 = Double.parseDouble(this.numero2.getText()); 
+  
+        this.resultado.setText(String.valueOf(num1*num2));        // TODO add your handling code here:
+    }//GEN-LAST:event_multMouseClicked
+
+    private void dividirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dividirMouseClicked
+        num1 = Double.parseDouble(this.numero1.getText());
+      num2 = Double.parseDouble(this.numero2.getText()); 
+  
+        this.resultado.setText(String.valueOf(num1/num2));        // TODO add your handling code here:
+    }//GEN-LAST:event_dividirMouseClicked
 
     /**
      * @param args the command line arguments
